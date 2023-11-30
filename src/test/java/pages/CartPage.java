@@ -40,6 +40,8 @@ public boolean isItemAdded() {
 	
 public void checkoutItems() {
 	
+	
+	
 	checkOut.click();
 }
 	

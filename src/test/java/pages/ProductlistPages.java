@@ -7,12 +7,13 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ProductlistPages {
 	
-	@FindBy(id="add-to-cart-sauce-labs-backpack")
+	@FindBy(id= "add-to-cart-sauce-labs-backpack")
 	WebElement itemOne;
 	
 	@FindBy(className="shopping_cart_link")
 	WebElement cartIcon;
 	
+WebDriver driver;
 
 	public ProductlistPages(WebDriver driver) {
 		PageFactory.initElements(driver, this);

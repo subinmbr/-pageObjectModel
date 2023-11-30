@@ -24,9 +24,6 @@ public class PlaceOrderTest {
 		driver= TestBase.getDriver();
 		loginPage = new LoginPage(driver);
 	}
-	
-	
-	
   @BeforeTest
   public void setup() {
 	  
@@ -46,16 +43,19 @@ public class PlaceOrderTest {
 	  productlistpages.viewCart();  
 	  Assert.assertTrue(cartpage.isItemAdded());
 	  cartpage.checkoutItems();
-	  
+	
 	  
 	  }
   
-  @AfterTest
   
-  public void tearDown() {
+  
+  
+  //@AfterTest
+  
+  //public void tearDown() {
 	  
-	  driver.quit();
-  }
+	  //driver.quit();
+  //}
   
   
 }
