@@ -1,22 +1,28 @@
 package testScripts;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import base.TestBase;
+import pages.CartPage;
 import pages.LoginPage;
+import pages.ProductlistPages;
 
 public class PlaceOrderTest {
 	WebDriver driver;
 	LoginPage loginPage;
+	ProductlistPages productlistpages;
+	CartPage cartpage;
+	
+	
 	
 	public PlaceOrderTest() {
 		TestBase.initDriver();
 		driver= TestBase.getDriver();
 		loginPage = new LoginPage(driver);
-		
-		
 	}
 	
 	
@@ -30,9 +36,26 @@ public class PlaceOrderTest {
 	  
   }
  
+ 
+  @Test
+ 
+  public void addTCart()  {
+	  
+	  productlistpages.addtoCart();
+	 
+	  productlistpages.viewCart();  
+	  Assert.assertTrue(cartpage.isItemAdded());
+	  cartpage.checkoutItems();
+	  
+	  
+	  }
   
+  @AfterTest
   
-  
+  public void tearDown() {
+	  
+	  driver.quit();
+  }
   
   
 }
